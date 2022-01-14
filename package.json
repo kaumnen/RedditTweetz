@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "dotenv": "^11.0.0",
-    "snoowrap": "^1.23.0"
+    "snoowrap": "^1.23.0",
+    "twitter-lite": "^1.1.0"
   },
   "name": "red_tweet",
   "description": "Twitter Bot posting various data, based on most popular posts on Reddit",
