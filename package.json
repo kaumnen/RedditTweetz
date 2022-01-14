@@ -1,10 +1,7 @@
 {
   "dependencies": {
-    "axios": "^0.24.0",
     "dotenv": "^11.0.0",
-    "snoowrap": "^1.23.0",
-    "twitter-api-client": "^1.5.1",
-    "twitter-lite": "^1.1.0"
+    "twitter": "^1.7.1"
   },
   "name": "red_tweet",
   "description": "Twitter Bot posting various data, based on most popular posts on Reddit",
