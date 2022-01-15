@@ -1,7 +1,7 @@
 import "dotenv/config";
 import snoowrap from "snoowrap";
 
-export async function getPost() {
+export async function getHotPost() {
     const redditAPI = new snoowrap({
         userAgent: 'reddit-bot-example-node',
         clientId: process.env.REDDIT_CLIENT_ID,
@@ -9,16 +9,22 @@ export async function getPost() {
         username: process.env.REDDIT_USERNAME,
         password: process.env.REDDIT_PASSWORD
     });
-    
-    let topPost = await redditAPI.getSubreddit("askReddit").getHot({limit: 1});
-    
-    let hottestPostNow = {
-      user: topPost[0].author.name,
-      link: topPost[0].url,
-      text: topPost[0].title,
-      score: topPost[0].score,
-      id: topPost[0].id
-  };
 
-    return hottestPostNow;
+    let topPost = await redditAPI.getSubreddit("askReddit").getHot({limit: 1});
+    return topPost[0];
+}
+
+export async function makeTweet() {
+    let topPost = await getHotPost();
+    
+    let hottestPostObject = {
+      user: topPost.author.name,
+      link: topPost.url,
+      text: topPost.title,
+      score: topPost.score,
+      id: topPost.id
+    };
+
+    let readyPost = `⬆️ ${hottestPostObject.score}  👉 ${hottestPostObject.user} asked: \n\n⚡${hottestPostObject.text} ${hottestPostObject.link}`;
+    return readyPost;
 };
