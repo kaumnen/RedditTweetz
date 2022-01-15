@@ -1,7 +1,7 @@
-import {} from "dotenv/config";
+import "dotenv/config";
 import snoowrap from "snoowrap";
 
-export async function scrapeSubreddit() {
+export async function getPosts() {
     const redditAPI = new snoowrap({
         userAgent: 'reddit-bot-example-node',
         clientId: process.env.REDDIT_CLIENT_ID,
