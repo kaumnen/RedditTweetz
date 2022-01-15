@@ -3,7 +3,18 @@ import { makeReplies } from './askRedditComments.js';
 import "dotenv/config";
 import { TwitterApi } from "twitter-api-v2";
 
+async function sendTweet(subredditName, twitterClient) {
+    let topPost = await makeTweet(subredditName);
+    let replies = await makeReplies(subredditName);
+
+    replies.unshift(topPost);
+
+    twitterClient.v2.tweetThread(replies).then(console.log(`Success for ${subredditName}`));
+}
+
 export async function tweetIt() {
+    
+    let subreddits = ["askReddit", "explainlikeimfive", "LifeProTips", "AskMen", "askscience", "AskWomen"];
 
     const client = new TwitterApi({
         appKey: process.env.TWITTER_CONSUMER_KEY,
@@ -14,10 +25,7 @@ export async function tweetIt() {
 
     const rwClient = client.readWrite;
 
-    let askRedditHottest = await makeTweet();
-    let askRedditComments = await makeReplies();
-
-    askRedditComments.unshift(askRedditHottest);
-
-    rwClient.v2.tweetThread(askRedditComments).then(console.log("Success!"));
+    for(let subreddit of subreddits) {
+        sendTweet(subreddit, rwClient);
+    };
 };

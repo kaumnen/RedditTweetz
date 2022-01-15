@@ -1,8 +1,8 @@
 import "dotenv/config";
 import snoowrap from "snoowrap";
-import { getHotPost } from "./askReddit.js";
+import { getTopPost } from "./askReddit.js";
 
-export async function makeReplies(){
+export async function makeReplies(subredditName){
     const redditAPI = new snoowrap({
         userAgent: 'reddit-bot-example-node',
         clientId: process.env.REDDIT_CLIENT_ID,
@@ -12,7 +12,7 @@ export async function makeReplies(){
     });
 
     //get top posts from subreddit
-    const post = await getHotPost();
+    const post = await getTopPost(subredditName);
 
     //get comments and assign needed information to an object
     let commentObjects = [];
@@ -25,18 +25,15 @@ export async function makeReplies(){
     comments.forEach(comment => {
         commentObjects.push({
             author: comment.author.name,
-            text: comment.body,
+            text: comment.body.length <= 120 ? comment.body : comment.body.substring(0, 117) + "...",
             score: comment.score,
             link: "https://reddit.com" + comment.permalink
         });
     });
 
     commentObjects.forEach(comment => {
-        let tweet = `⬆️ ${comment.score}  👉 ${comment.author} commented:\n\n⭐${comment.text}\n\n${comment.link}`;
-        let tweetLength = tweet.length;
-        if(tweetLength < 280) {    
-             commentArray.push(tweet);
-        };
+        let tweet = `⬆️ ${comment.score}  👉 ${comment.author} commented:\n\n⭐${comment.text}`;
+        commentArray.push(tweet);
     });
 
     return commentArray;
