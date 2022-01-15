@@ -24,7 +24,7 @@ Twitter bot utilizing Reddit API
 | Reddit API | 
 
 ### Check it out!
-[RedditTweetz](https://itsvg.in)
+[RedditTweetz](https://twitter.com/RedditTweetz)
 
 
       
