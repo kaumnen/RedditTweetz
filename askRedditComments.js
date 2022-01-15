@@ -27,7 +27,7 @@ export async function makeReplies(){
             author: comment.author.name,
             text: comment.body,
             score: comment.score,
-            link: comment.link_permalink
+            link: "https://reddit.com" + comment.permalink
         });
     });
 
