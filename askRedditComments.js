@@ -1,6 +1,5 @@
 import "dotenv/config";
 import snoowrap from "snoowrap";
-import * as twitterText from "twitter-text"
 import { getHotPost } from "./askReddit.js";
 
 export async function makeReplies(){
