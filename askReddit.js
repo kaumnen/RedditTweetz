@@ -25,6 +25,8 @@ export async function makeTweet() {
       id: topPost.id
     };
 
-    let readyPost = `⬆️ ${hottestPostObject.score}  👉 ${hottestPostObject.user} asked: \n\n⚡${hottestPostObject.text} ${hottestPostObject.link}`;
+    let now = new Date();
+
+    let readyPost = `⏰ ${now.getUTCFullYear()}-${now.getUTCMonth()}-${now.getUTCDate()} ${now.getUTCHours()}:${now.getUTCMinutes()}:${now.getUTCSeconds()} UTC ⏰\n\n⬆️ ${hottestPostObject.score}  👉 ${hottestPostObject.user} asked: \n\n⚡${hottestPostObject.text} ${hottestPostObject.link}`;
     return readyPost;
 };
