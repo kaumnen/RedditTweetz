@@ -1,7 +1,7 @@
 <div align="center">
       <h1> <img src="https://i.ibb.co/rZdLk9r/1000-F-333424490-r-TQVgsy-TU4-PPJT5j-NVp1-Wv-Wm-Lgzwr-VLZ.jpg" width="80px"><br/>RedditTweetz</h1>
      </div>
-<p align="center"> <a href="https://akom.me" target="_blank"><img alt="" src="https://img.shields.io/badge/Website-EA4C89?style=normal&logo=dribbble&logoColor=white" style="vertical-align:center" /></a> <a href="https://twitter.com/kaumnen" target="_blank"><img alt="" src="https://img.shields.io/badge/Twitter-1DA1F2?style=normal&logo=twitter&logoColor=white" style="vertical-align:center" /></a> <a href="https://www.linkedin.com/in/komnenovic/}" target="_blank"><img alt="" src="https://img.shields.io/badge/LinkedIn-0077B5?style=normal&logo=linkedin&logoColor=white" style="vertical-align:center" /></a> </p>
+<p align="center"> <a href="https://akom.me" target="_blank"><img alt="" src="https://img.shields.io/badge/Website-EA4C89?style=normal&logo=dribbble&logoColor=white" style="vertical-align:center" /></a> <a href="https://twitter.com/kaumnen" target="_blank"><img alt="" src="https://img.shields.io/badge/Twitter-1DA1F2?style=normal&logo=twitter&logoColor=white" style="vertical-align:center" /></a> <a href="https://www.linkedin.com/in/komnenovic}" target="_blank"><img alt="" src="https://img.shields.io/badge/LinkedIn-0077B5?style=normal&logo=linkedin&logoColor=white" style="vertical-align:center" /></a> </p>
 
 # Description
 Twitter bot utilizing Reddit API
