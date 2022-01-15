@@ -20,7 +20,8 @@ export async function scrapeSubreddit() {
         postsData.push({
           link: post.url,
           text: post.title,
-          score: post.score
+          score: post.score,
+          id: post.id
         })
       });
     
