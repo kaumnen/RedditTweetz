@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/kaumnen/Red_Tweet#readme",
   "engines": {
-    "node": ">=16.13.1"
+    "node": "=16.13.1"
   }
 }
